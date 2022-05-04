@@ -30,6 +30,7 @@ questions = [
 
 answer = ["a", "b", "b", "b", "d", "b", "b", "c", "a", "a"]
 
+no_ques = len(questions)+1
 
 def remove(connection):
     if connection in list_of_clients:
@@ -93,8 +94,8 @@ def clientthread(conn, nick_name):
                 continue
 
         else:
-            conn.send(f"\n\n\nScore: {score}".encode("utf-8"))
-            print(f"{nick_name} Scored: {score}")
+            conn.send(f"\n\n\nScore: {score}/{no_ques}".encode("utf-8"))
+            print(f"{nick_name} Scored: {score}/{no_ques}")
             break
 
 
