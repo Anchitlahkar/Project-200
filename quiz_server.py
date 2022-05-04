@@ -71,7 +71,8 @@ def clientthread(conn, nick_name):
                     msg=message.split(":")[1].lower()
                     msg.replace(" ", "")
 
-                    if msg == f" {ans}":
+
+                    if msg == ans:
                         score += 1
                         conn.send(
                             f"\nCorrect Answer, Good Job!!!\n\n".encode("utf-8"))
